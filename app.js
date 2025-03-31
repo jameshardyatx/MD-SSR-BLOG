@@ -53,6 +53,7 @@ app.get('/blog/:post', (req, res) => {
         
         markdownToHtml(data).then(({html, frontmatter}) => {
             res.send(`<div class="blog-content">${html}</div>`);
+            
             // console.log(frontmatter);
         });
     });
