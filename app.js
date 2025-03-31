@@ -1,3 +1,10 @@
+// TODO //
+// 1. Add html templating system to inject blog post into the template
+// 2. Add CSS
+// 3. When visiting home page, get a list of all of the posts under "blog" and put them in a list for the home page
+//
+
+
 import express from 'express';
 const app = express();
 app.use(express.static('public'));
@@ -46,7 +53,7 @@ app.get('/blog/:post', (req, res) => {
         
         markdownToHtml(data).then(({html, frontmatter}) => {
             res.send(`<div class="blog-content">${html}</div>`);
-            console.log(frontmatter);
+            // console.log(frontmatter);
         });
     });
 });
